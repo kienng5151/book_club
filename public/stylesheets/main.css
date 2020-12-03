@@ -422,6 +422,10 @@ footer {
     width: 90%;
 }
 
+.log_out_btn {
+    text-align: right;
+}
+
 .log_out_btn button {
     background-color: rgb(214, 52, 165);
     border: none;
