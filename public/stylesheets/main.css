@@ -1,0 +1,48 @@
+
+body {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: white;
+    padding-top: 50px;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: rgb(83, 81, 81);
+}
+
+.books_image {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 3em auto 2em auto;
+}
+
+.books_image::after {
+    background-image: url('https://i1.pickpik.com/photos/916/460/15/dark-gloomy-books-pages-preview.jpg');
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    content: "";
+}
+
+.book_text {
+    text-align: center;
+}
+
+.content {
+    margin: 0 auto;
+    justify-content: center;
+}

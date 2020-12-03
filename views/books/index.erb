@@ -1,0 +1,57 @@
+
+<nav>
+    <a href="/signup">Sign up</a>
+    <a href="/login">Log in</a>
+</nav>
+
+<div class="books_image">
+    <div class="book_text"> 
+        <h1>Clueless Book Club</h1>
+
+        <h2>Bookworms Unite!</h2>
+    </div>
+</div>
+
+<section class="content">
+    <% if logged_in? %>
+        <h3>Hi <%= current_user['first_name'] %>. Good day to you!</h3>
+
+        <a href="/books/new">Add new book</a>
+
+        <% books.each do |book_item| %>
+            <h3><%= book_item['title'] %></h3>
+
+            <ul>
+                <li>Author: <%= book_item['author'] %></li>
+                <li>Category: <%= book_item['category'] %></li>
+                <li>Genre: <%= book_item['genre'] %> </li>
+                <li>About: <%= book_item['about'] %> </li>
+            </ul>
+
+            <img src="<%= book_item['image_url'] %>" alt=""><br />
+
+            <% if false %>
+            <a href="/books/<%= book_item['id'] %>/edit">Edit book</a>
+            <% end %>
+
+            <form action="/books/<%= book_item['id'] %>/edit">
+                <input type="hidden" value="edit">
+                <button>Edit book</button>
+            </form>
+            
+            <form action="/books/<%= book_item['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Delete book</button>
+            </form>
+
+            <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+
+        <% end %>
+
+        <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Log out</button>
+        </form>
+
+    <% end %>
+</section>

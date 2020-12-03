@@ -1,0 +1,15 @@
+
+<h1>Edit book</h1>
+
+<form action="/books/<%= book_item['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="title" value=" <%= book_item['title']%>">
+    <input type="text" name="author" value=" <%= book_item['author'] %> ">
+    <input type="text" name="category" value=" <%= book_item['category'] %> ">
+    <input type="text" name="genre" value=" <%= book_item['genre'] %> ">
+    <input type="text" name="about" value=" <%= book_item['about'] %> ">
+    <input type="text" name="image_url" value=" <%= book_item['image_url'] %> ">
+
+    <button>Update book</button>
+
+</form>
