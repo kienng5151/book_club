@@ -1,19 +1,55 @@
 
 <nav>
-    <a href="/signup">Sign up</a>
-    <a href="/login">Log in</a>
+    <ul>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/">Home</a></li>
+    </ul>
 </nav>
 
 <div class="books_image">
-    <div class="book_text"> 
-        <h1>Clueless Book Club</h1>
+    <h1>Clueless Book Club</h1>
 
-        <h2>Bookworms Unite!</h2>
-    </div>
+    <h2>Bookworms Unite!</h2>
 </div>
 
-<section class="content">
+<div class="content_1">
+    <p>Your personal library of your favorite books</p>
+</div>
+
+<%# <section class="content_2">
+    <figure class="quote">
+        <blockquote>
+            A room without books is like a body without a soul.
+        </blockquote>
+        <figcaption>
+            &mdash; Marcus Tullius Cicero
+        </figcaption>
+    </figure>
+    <p></p>
+</section> %>
+
+<section class="content_2">
+    <article class="quote">
+        <blockquote>
+            <p>A room without books is like a body without a soul.</p>
+            <p>&mdash; Marcus Tullius Cicero</p>
+        </blockquote>
+    </article>
+    <article class="content_2_block">
+        <p>Behold the power of reading!</p>
+        <p>So many books, so much blah blah...</p>
+    </article>
+</section>
+
+<section class="content_3">
     <% if logged_in? %>
+
+        <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Log out</button>
+        </form>
+
         <h3>Hi <%= current_user['first_name'] %>. Good day to you!</h3>
 
         <a href="/books/new">Add new book</a>
@@ -47,11 +83,5 @@
             <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
 
         <% end %>
-
-        <form action="/sessions" method="POST">
-            <input type="hidden" name="_method" value="delete">
-            <button>Log out</button>
-        </form>
-
     <% end %>
 </section>

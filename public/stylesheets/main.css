@@ -3,28 +3,58 @@ body {
     margin: 0 auto;
 }
 
+/* main {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+ul {
+    list-style-type: none;
+    
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(107, 105, 105);
+}
+
+li a:hover {
+    color: black;
+}
+
 h1 {
     font-size: 3.5rem;
     color: white;
-    padding-top: 50px;
+    padding-top: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: rgb(83, 81, 81);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .books_image {
     position: relative;
     align-items: center;
     justify-content: center;
-    
-    margin: 3em auto 2em auto;
+    margin: 40px auto 40px auto;
+    text-align: center;
 }
 
-.books_image::after {
+.books_image::after{
     background-image: url('https://i1.pickpik.com/photos/916/460/15/dark-gloomy-books-pages-preview.jpg');
-    height: 300px;
+    width: 100%;
+    height: 250px;
     background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
@@ -38,11 +68,47 @@ h2 {
     content: "";
 }
 
-.book_text {
+.content_1 {
+    margin: 8em auto 5em auto;
     text-align: center;
 }
 
-.content {
-    margin: 0 auto;
+.content_1 p {
+    font-size: 1.5rem;
+    color: rgb(68, 68, 68);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.quote {
+    margin: 0 2em;  
+    background: #eee;
+    padding: 0.5em;
+    border-radius: 1em;
+    width: 30%;
+    height: 50%;
+    font-size: 2rem;
+    font-style: italic;
+    text-align: right;
+    color: gray;
+}
+
+.quote figcaption,
+.quote blockquote {
+    margin: 1em;
+}
+
+.content_2 {
+    display: flex;
     justify-content: center;
 }
+
+.content_2_block {
+    font-size: 2.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    width: 30%;
+}
+
+.content_2_block p:nth-child(2) {
+    font-family: 'Dancing Script', cursive;
+}
+
