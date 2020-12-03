@@ -5,5 +5,3 @@ CREATE TABLE books(id SERIAL PRIMARY KEY, title TEXT, author TEXT, category TEXT
 
 CREATE TABLE users(id SERIAL PRIMARY KEY, first_name TEXT, last_name TEXT, email TEXT, password_digest TEXT);
 
-
-

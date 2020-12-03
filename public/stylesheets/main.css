@@ -1,49 +1,44 @@
 
 body {
     margin: 0 auto;
+    background-color: rgb(240, 240, 240);
 }
 
-/* main {
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-ul {
+nav ul {
     list-style-type: none;
-    
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2em;
 }
 
-li {
-    float: right;
-}
-
-li a {
+nav li a {
     display: block;
     text-align: center;
     text-decoration: none;
     padding: 10px;
     color: rgb(107, 105, 105);
+    font-size: 1.2rem;
 }
 
-li a:hover {
+nav li a:hover {
     color: black;
 }
 
-h1 {
+.book_club_heading h1 {
     font-size: 3.5rem;
     color: white;
     padding-top: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-h2 {
+.book_club_heading p {
     font-size: 2.5rem;
     color: rgb(83, 81, 81);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
-.books_image {
+.book_club_heading {
     position: relative;
     align-items: center;
     justify-content: center;
@@ -51,7 +46,7 @@ h2 {
     text-align: center;
 }
 
-.books_image::after{
+.book_club_heading::after{
     background-image: url('https://i1.pickpik.com/photos/916/460/15/dark-gloomy-books-pages-preview.jpg');
     width: 100%;
     height: 250px;
@@ -76,7 +71,9 @@ h2 {
 .content_1 p {
     font-size: 1.5rem;
     color: rgb(68, 68, 68);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(122, 73, 170);
 }
 
 .quote {
@@ -104,11 +101,425 @@ h2 {
 
 .content_2_block {
     font-size: 2.2rem;
-    font-family: 'Courier New', Courier, monospace;
     width: 30%;
 }
 
 .content_2_block p:nth-child(2) {
     font-family: 'Dancing Script', cursive;
+    color: rgb(54, 54, 236);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.content_4 {
+    margin: 0 5em;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.content_4 h3 {
+    font-size: 2rem;
+    color: black;
+    padding-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
+.content_3 {
+    margin: 0 5em;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.content_3 h3 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
+.upcoming_events {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -1.5em;
+}
+
+.upcoming_events h4 {
+    font-size: 1.8rem;
+}
+
+.upcoming_events p {
+    font-style: italic;
+}
+
+.content_3 img {
+    width: 180px;
+    height: 250px;
+}
+
+.discussion_1, .classes, .discussion_2 {
+    width: 15%;
+    font-size: 1.5rem;
+}
+
+.join_club h3 {
+    font-size: 2.5rem;
+    color: black;
+    padding-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.join_club {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 40px auto;
+    text-align: center;
+}
+
+.join_club::after{
+    background-image: url('https://snappygoat.com/b/9d3601715dbefe5baa4bcfdedf7eafd5851e3746');
+    width: 100%;
+    height: 350px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    content: "";
+}
+
+.join_club_signup {
+    display: flex;
+    justify-content: center;
+    margin-top: -0.5em;;
+}
+
+.monthly_signup {
+    border: 1px solid rgb(111, 111, 161);
+    background-color: rgb(111, 111, 161);
+    color: white;
+    width: 15%;
+    margin: -1em 1.5em 0 0;
+    padding-bottom: 1em;
+    font-size: 1.5rem;
+}
+
+.annual_signup {
+    border: 1px solid rgb(40, 40, 82);
+    background-color: rgb(40, 40, 82);
+    color: white;
+    width: 15%;
+    margin: -1em 0 0 1.5em;
+    padding-bottom: 1em;
+    font-size: 1.5rem;
+}
+
+.monthly_signup button {
+    font-size: 1rem;
+    background-color: rgb(111, 111, 161);
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.monthly_signup button:hover {
+    background-color: white;
+    color: rgb(111, 111, 161);
+    cursor: pointer;
+}
+
+.annual_signup button {
+    font-size: 1rem;
+    background-color: rgb(40, 40, 82);
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.annual_signup button:hover {
+    background-color: white;
+    color: rgb(40, 40, 82);
+    cursor: pointer;
+}
+
+footer {
+    margin: 2em 5em;
+    letter-spacing: 0.7px;
+}
+
+.login {
+    width: 30%;
+    margin-left: 5em;
+    justify-content: center;
+}
+
+.login input {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.login input[type="submit"] {
+    color: white;
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.login button {
+    font-size: 1rem;
+    background-color: rebeccapurple;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.login button:hover {
+    background-color: rgb(176, 151, 202);
+    cursor: pointer;
+}
+
+.signup {
+    width: 30%;
+    margin-left: 5em;
+    justify-content: center;
+}
+
+.signup input {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.signup input[type="submit"] {
+    color: white;
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.signup button {
+    font-size: 1rem;
+    background-color: rgb(163, 52, 24);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.signup button:hover {
+    background-color: rgb(190, 113, 93);
+    cursor: pointer;
+}
+
+.add_new_book_btn a {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.add_new_book_btn a:link {
+    background-color: blue;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.add_new_book_btn a:hover {
+    background-color: rgb(149, 149, 238);
+    cursor: pointer;
+}
+
+.add_books {
+    width: 30%;
+    margin-left: 5em;
+    justify-content: center;
+}
+
+.add_books input {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.add_books input[type="submit"] {
+    color: white;
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.add_books button {
+    font-size: 1rem;
+    background-color: rgb(163, 52, 24);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.add_books button:hover {
+    background-color: rgb(190, 113, 93);
+    cursor: pointer;
+}
+
+.book_block ul {
+    width: 90%;
+    text-align: justify;
+}
+
+.book_block ul li {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.7px;
+}
+
+.book_block img {
+    width: 180px;
+    height: 250px;
+}
+
+.line_break_border {
+    border-bottom: 3px dashed black;
+    width: 90%;
+}
+
+.log_out_btn button {
+    background-color: rgb(214, 52, 165);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.log_out_btn button:hover {
+    background-color:rgb(211, 140, 187);
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.edit_and_delete_btn {
+    display: flex;
+    margin: 1em 0 1.5em 0;
+    border: none;
+}
+
+.edit_btn button {
+    margin-right: 2em;
+    background-color: rgb(10, 177, 10);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.edit_btn button:hover {
+    background-color: rgb(146, 243, 146);
+    cursor: pointer;
+}
+
+.edit_book {
+    width: 30%;
+    margin-left: 5em;
+    justify-content: center;
+}
+
+.edit_book input {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.edit_book input[type="submit"] {
+    color: white;
+    max-width: 200px;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.edit_book button {
+    font-size: 1rem;
+    background-color: rgb(10, 177, 10);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.edit_book button:hover {
+    background-color: rgb(190, 113, 93);
+    cursor: pointer;
+}
+
+.delete_btn button {
+    margin-right: 2em;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.delete_btn button:hover {
+    background-color: rgb(246, 175, 175);
+    cursor: pointer;
 }
 

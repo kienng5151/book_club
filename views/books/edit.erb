@@ -1,15 +1,28 @@
 
-<h1>Edit book</h1>
-
-<form action="/books/<%= book_item['id'] %>" method="POST">
+<section class="edit_book">
+    <form action="/books/<%= book_item['id'] %>" method="POST">
     <input type="hidden" name="_method" value="patch">
-    <input type="text" name="title" value=" <%= book_item['title']%>">
-    <input type="text" name="author" value=" <%= book_item['author'] %> ">
-    <input type="text" name="category" value=" <%= book_item['category'] %> ">
-    <input type="text" name="genre" value=" <%= book_item['genre'] %> ">
-    <input type="text" name="about" value=" <%= book_item['about'] %> ">
-    <input type="text" name="image_url" value=" <%= book_item['image_url'] %> ">
 
-    <button>Update book</button>
+        <h1>Edit book</h1>
 
-</form>
+        <label for="">Title: </label>
+        <input type="text" name="title" value=" <%= book_item['title']%>">
+
+        <label for="">Author: </label>
+        <input type="text" name="author" value=" <%= book_item['author'] %> ">
+
+        <label for="">Category: </label>
+        <input type="text" name="category" value=" <%= book_item['category'] %> ">
+
+        <label for="">Genre: </label>
+        <input type="text" name="genre" value=" <%= book_item['genre'] %> ">
+
+        <label for="">About: </label>
+        <input type="text" name="about" value=" <%= book_item['about'] %> ">
+
+        <label for="">Image URL: </label>
+        <input type="text" name="image_url" value=" <%= book_item['image_url'] %> ">
+
+        <button type="submit" vakue="submit">Update book</button>
+    </form>
+</section>

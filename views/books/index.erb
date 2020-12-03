@@ -1,86 +1,56 @@
 
-<nav>
-    <ul>
-        <li><a href="/signup">Sign up</a></li>
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/">Home</a></li>
-    </ul>
-</nav>
-
-<div class="books_image">
-    <h1>Clueless Book Club</h1>
-
-    <h2>Bookworms Unite!</h2>
-</div>
-
-<div class="content_1">
-    <p>Your personal library of your favorite books</p>
-</div>
-
-<%# <section class="content_2">
-    <figure class="quote">
-        <blockquote>
-            A room without books is like a body without a soul.
-        </blockquote>
-        <figcaption>
-            &mdash; Marcus Tullius Cicero
-        </figcaption>
-    </figure>
-    <p></p>
-</section> %>
-
-<section class="content_2">
-    <article class="quote">
-        <blockquote>
-            <p>A room without books is like a body without a soul.</p>
-            <p>&mdash; Marcus Tullius Cicero</p>
-        </blockquote>
-    </article>
-    <article class="content_2_block">
-        <p>Behold the power of reading!</p>
-        <p>So many books, so much blah blah...</p>
-    </article>
-</section>
-
-<section class="content_3">
+<section class="content_4">
     <% if logged_in? %>
 
-        <form action="/sessions" method="POST">
-            <input type="hidden" name="_method" value="delete">
-            <button>Log out</button>
-        </form>
+        <div class="log_out_btn">
+            <form action="/sessions" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Log out</button>
+            </form>
+        </div>
 
-        <h3>Hi <%= current_user['first_name'] %>. Good day to you!</h3>
+        <h3>Hi<b> <%= current_user['first_name'] %></b>, good day to you! Here's you book library.</h3>
 
-        <a href="/books/new">Add new book</a>
+        <div class="add_new_book_btn">
+            <a href="/books/new">Add new book</a>
+        </div>
+
+        <p class="line_break_border"></p>
 
         <% books.each do |book_item| %>
-            <h3><%= book_item['title'] %></h3>
+            <article class="book_block">
+                <h3><%= book_item['title'] %></h3>
 
-            <ul>
-                <li>Author: <%= book_item['author'] %></li>
-                <li>Category: <%= book_item['category'] %></li>
-                <li>Genre: <%= book_item['genre'] %> </li>
-                <li>About: <%= book_item['about'] %> </li>
-            </ul>
+                <ul>
+                    <li>Author: <%= book_item['author'] %></li>
+                    <li>Category: <%= book_item['category'] %></li>
+                    <li>Genre: <%= book_item['genre'] %> </li>
+                    <li>About: <%= book_item['about'] %> </li>
+                </ul>
 
-            <img src="<%= book_item['image_url'] %>" alt=""><br />
+                <img src="<%= book_item['image_url'] %>" alt=""><br />
+            </article>
 
             <% if false %>
             <a href="/books/<%= book_item['id'] %>/edit">Edit book</a>
             <% end %>
 
-            <form action="/books/<%= book_item['id'] %>/edit">
-                <input type="hidden" value="edit">
-                <button>Edit book</button>
-            </form>
-            
-            <form action="/books/<%= book_item['id'] %>" method="POST">
-                <input type="hidden" name="_method" value="delete">
-                <button>Delete book</button>
-            </form>
+        <div class="edit_and_delete_btn">
+            <div class="edit_btn">
+                <form action="/books/<%= book_item['id'] %>/edit">
+                    <input type="hidden" value="edit">
+                    <button>Edit book</button>
+                </form>
+            </div>
+            <div class="delete_btn">
+                <form action="/books/<%= book_item['id'] %>" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Delete book</button>
+                </form>
+            </div>
+        </div>
 
-            <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="line_break_border"></p>
 
         <% end %>
     <% end %>
