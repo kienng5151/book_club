@@ -24,3 +24,5 @@ delete '/sessions' do
 
     redirect '/'
 end
+
+

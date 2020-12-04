@@ -1,7 +1,88 @@
 
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/signup">Sign up</a></li>
+    </ul>
+</nav>
+
+<div class="book_club_heading">
+<h1>Clueless Book Club</h1>
+
+<p>Bookworms unite!</p>
+</div>
+
+<div class="content_1">
+    <p>Your personal library of your favorite books</p>
+</div>
+
+<section class="content_2">
+    <article class="quote">
+        <blockquote>
+            <p>A room without books is like a body without a soul.</p>
+            <p>&mdash; Marcus Tullius Cicero</p>
+        </blockquote>
+    </article>
+    <article class="content_2_block">
+        <p>Behold the power of reading!</p>
+        <p>So many books, so much blah blah...</p>
+    </article>
+</section>
+
+<section class="content_3">
+<h3>Don't miss these upcoming events.</h3>
+    <section class="upcoming_events">
+        <article class="discussion_1">
+            <h4>Discussion</h4>
+            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415428006l/18404259.jpg" alt="">
+            <p>Live Book Discussion</p>
+            <p>December 7</p>
+        </article>
+        <article class="classes">
+            <h4>Classes</h4>
+            <img src="https://cdn.pixabay.com/photo/2018/02/02/22/48/book-stack-3126530_1280.jpg" alt="">
+            <p>Book School Session: 1</p>
+            <p>December 14</p>
+        </article>
+        <article class="discussion_2">
+            <h4>Discussion</h4>
+            <img src="https://p0.pxfuel.com/preview/833/412/942/cat-white-black-teeth.jpg" alt="">
+            <p>Live Book Discussion with author <b>Meow Meow</b></p>
+            <p>December 21</p>
+        </article>
+    </section>
+</section>
+
+<section class="join_club">
+<h3>JOIN THE CLUB NOW</h3>
+    <section class="join_club_signup">
+        <article class="monthly_signup">
+            <h4>MONTHLY</h4>
+            <p>Upgrade to annual anytime</p>
+            <p>$15/MONTH</p>
+            <form action="/monthly">
+                <button>MONTHLY SIGNUP</button>
+            </form>
+            
+        </article>
+        <article class="annual_signup">
+            <h4>ANNUAL</h4>
+            <p>Best deal ever. Two months free!</p>
+            <p>$150/YEAR</p>
+            <form action="/annual">
+                <button>ANNUAL SIGNUP</button>
+            </form>
+        </article>
+    </section>  
+</section>
+
+<section class="signup_promo_text">
+    <p>Start your free trial now <a href="/signup">here</a> or click on <b>Sign up</b> link on top of this page!</p>
+</section>
+
 <section class="content_4">
     <% if logged_in? %>
-
         <div class="log_out_btn">
             <form action="/sessions" method="POST">
                 <input type="hidden" name="_method" value="delete">
@@ -30,10 +111,6 @@
 
                 <img src="<%= book_item['image_url'] %>" alt=""><br />
             </article>
-
-            <% if false %>
-            <a href="/books/<%= book_item['id'] %>/edit">Edit book</a>
-            <% end %>
 
         <div class="edit_and_delete_btn">
             <div class="edit_btn">
