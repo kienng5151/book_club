@@ -1,0 +1,52 @@
+
+<div class="log_out_btn">
+    <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="delete">
+        <button>Log out</button>
+    </form>
+</div>
+
+<section class="content_4">
+    <% if logged_in? %>
+        <h3>Hi<b> <%= current_user['first_name'] %></b>, good day to you! Here's you book library.</h3>
+
+        <div class="add_new_book_btn">
+            <a href="/books/new">Add new book</a>
+        </div>
+
+        <p class="line_break_border"></p>
+
+        <% books.each do |book_item| %>
+            <article class="book_block">
+                <h3><%= book_item['title'] %></h3>
+
+                <ul>
+                    <li>Author: <%= book_item['author'] %></li>
+                    <li>Category: <%= book_item['category'] %></li>
+                    <li>Genre: <%= book_item['genre'] %> </li>
+                    <li>About: <%= book_item['about'] %> </li>
+                </ul>
+
+                <img src="<%= book_item['image_url'] %>" alt=""><br />
+            </article>
+
+        <div class="edit_and_delete_btn">
+            <div class="edit_btn">
+                <form action="/books/<%= book_item['id'] %>/edit">
+                    <input type="hidden" value="edit">
+                    <button>Edit book</button>
+                </form>
+            </div>
+            <div class="delete_btn">
+                <form action="/books/<%= book_item['id'] %>" method="POST">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Delete book</button>
+                </form>
+            </div>
+        </div>
+
+        <p class="line_break_border"></p>
+
+        <% end %>
+    <% end %>
+</section>
