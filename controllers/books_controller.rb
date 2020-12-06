@@ -1,8 +1,12 @@
 
 get '/' do
+  erb :'books/index'
+end
+
+get '/users/book_library' do
   books = run_sql("SELECT * FROM books ORDER BY id")
 
-  erb :'books/index', locals: {
+  erb :'/users/book_library', locals: {
     books: books
   }
 end
@@ -18,17 +22,20 @@ post '/books' do
   book_genre = params['genre']
   book_about = params['about']
   book_image_url = params['image_url']
+  
+  book_title_add_quote = add_single_quote(book_title)
+  book_about_add_quote = add_single_quote(book_about)
 
-  run_sql("INSERT INTO books(title, author, category, genre, about, image_url) VALUES('#{book_title}', '#{book_author}', '#{book_category}', '#{book_genre}', '#{book_about}', '#{book_image_url}')")
+  run_sql("INSERT INTO books(title, author, category, genre, about, image_url) VALUES('#{book_title_add_quote}', '#{book_author}', '#{book_category}', '#{book_genre}', '#{book_about_add_quote}', '#{book_image_url}')")
 
-  redirect '/'
+  redirect '/users/book_library'
 end
 
 delete '/books/:id' do
   book_id = params['id']
   run_sql("DELETE FROM books WHERE id=#{book_id}")
 
-  redirect '/'
+  redirect '/users/book_library'
 end
 
 get '/books/:id/edit' do
@@ -50,8 +57,11 @@ patch '/books/:id' do
   book_about = params['about']
   book_image_url = params['image_url']
 
-  run_sql("UPDATE books SET title='#{book_title}', author='#{book_author}', category='#{book_category}', genre='#{book_genre}', about='#{book_about}', image_url='#{book_image_url}' WHERE id=#{book_id}")
+  book_title_add_quote = add_single_quote(book_title)
+  book_about_add_quote = add_single_quote(book_about)
 
-  redirect '/'
+  run_sql("UPDATE books SET title='#{book_title_add_quote}', author='#{book_author}', category='#{book_category}', genre='#{book_genre}', about='#{book_about_add_quote}', image_url='#{book_image_url}' WHERE id=#{book_id}")
+
+  redirect '/users/book_library'
 end
 

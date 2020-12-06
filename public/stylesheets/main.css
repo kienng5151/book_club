@@ -125,11 +125,12 @@ nav li a:hover {
 }
 
 .content_4 {
-    margin: 0 5em;
+    margin: 2em 5em;
     justify-content: center;
     text-align: center;
     align-items: center;
     background: rgb(204, 255, 255);
+    padding-top: 1em;
 }
 
 .content_4 h3 {
@@ -274,7 +275,7 @@ footer {
     height: 20px;
     border: 1px solid black;
     border-radius: 3px;
-    margin: 10px 0;
+    margin: 1em 0;
     padding: 5px;
     font-size: 1rem;
 }
@@ -315,7 +316,7 @@ footer {
     height: 20px;
     border: 1px solid black;
     border-radius: 3px;
-    margin: 10px 0;
+    margin: 1em 0;
     padding: 5px;
     font-size: 1rem;
 }
@@ -330,7 +331,7 @@ footer {
 
 .signup button {
     font-size: 1rem;
-    background-color: rgb(163, 52, 24);
+    background-color: rebeccapurple;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -340,7 +341,7 @@ footer {
 }
 
 .signup button:hover {
-    background-color: rgb(190, 113, 93);
+    background-color: rgb(176, 151, 202);
     cursor: pointer;
 }
 
@@ -391,7 +392,7 @@ footer {
 
 .add_books button {
     font-size: 1rem;
-    background-color: rgb(163, 52, 24);
+    background-color: blue;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -401,7 +402,7 @@ footer {
 }
 
 .add_books button:hover {
-    background-color: rgb(190, 113, 93);
+    background-color: rgb(155, 155, 245);
     cursor: pointer;
 }
 
@@ -427,23 +428,27 @@ footer {
 }
 
 .log_out_btn {
-    text-align: right;
+    display:flex; 
+    justify-content:flex-end; 
+    align-items:center; 
+    margin: 1.5em 5em 0 0;
 }
 
 .log_out_btn button {
-    background-color: rgb(214, 52, 165);
+    background-color: rgb(134, 132, 132);
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 0.6em 1.2em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
     border-radius: 10px;
+    transition-duration: 0.4s;
 }
 
 .log_out_btn button:hover {
-    background-color:rgb(211, 140, 187);
+    background-color:rgb(194, 190, 190);
     cursor: pointer;
 }
 
@@ -511,7 +516,7 @@ h3 {
 }
 
 .edit_book button:hover {
-    background-color: rgb(190, 113, 93);
+    background-color: rgb(127, 199, 127);
     cursor: pointer;
 }
 
@@ -617,4 +622,27 @@ h3 {
 .signup_promo_text p {
     text-align: center;
     font-size: 1.2rem;
+}
+
+.cancel_btn {
+    width: 30%;
+    margin: -1.2em -5.5em 0 0;
+    justify-content: center;
+}
+
+.cancel_btn button {
+    font-size: 1rem;
+    background-color: rgb(172, 57, 28);
+    border: none;
+    color: white;
+    padding: 0.6em 1.2em;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    float: right;
+}
+
+.cancel_btn button:hover {
+    background-color: rgb(197, 138, 123);
+    cursor: pointer;
 }

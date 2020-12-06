@@ -37,6 +37,17 @@ def current_user
   end
 end
 
+def add_single_quote(book) 
+  new_string = ""
+  book.each_char do |char|
+      new_string += char
+      if char=="'"
+          new_string += "'"
+      end
+  end
+  return new_string
+end
+
 require_relative 'controllers/books_controller'
 require_relative 'controllers/sessions_controller'
 require_relative 'controllers/users_controller'
